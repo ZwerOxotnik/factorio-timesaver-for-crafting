@@ -36,7 +36,7 @@ Please report any issues or a mistake in the documentation, you can help us by
 
 ## <a name="feature"></a> Want a Feature?
 
-You can *request* a new feature by [submitting an issue](https://gitlab.com/ZwerOxotnik/timesaver-for-crafting/issues) to our GitHub
+You can *request* a new feature by [submitting an issue](https://gitlab.com/ZwerOxotnik/timesaver-for-crafting/issues) to our GitLab
 Repository or on [mods.factorio.com](https://mods.factorio.com/mod/timesaver-for-crafting/discussion).
 
 ## Future plans
