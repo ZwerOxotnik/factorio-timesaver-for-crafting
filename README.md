@@ -1,4 +1,4 @@
-# Chat of extended interaction
+# Timesaver for crafting
 
 Read this in another language | [English](/README.md) | [Русский](/docs/ru/README.md)
 |---|---|---|
