@@ -2,6 +2,8 @@
 -- Copyright (c) 2019 ZwerOxotnik <zweroxotnik@gmail.com>
 -- License: MIT
 -- Version: 0.1.0 (2019.02.01)
+-- Description: Lost crafting time is compensated.
+-- Your craft speeds up depending on your craft activity.
 -- Source: https://gitlab.com/ZwerOxotnik/timesaver-for-crafting
 -- Homepage: https://mods.factorio.com/mod/timesaver-for-crafting
 
