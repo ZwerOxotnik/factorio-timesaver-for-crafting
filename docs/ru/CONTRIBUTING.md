@@ -14,10 +14,10 @@
 
 ## <a name="issue"></a> Нашли ошибку?
 Пожалуйста, сообщайте о любых проблемах или ошибках в документации, вы можете помочь нам
-[submitting an issue](https://gitlab.com/ZwerOxotnik/event-listener/issues) на нашем GitLab репозитории или сообщите на [mods.factorio.com](https://mods.factorio.com/mod/event-listener/discussion).
+[submitting an issue](https://gitlab.com/ZwerOxotnik/timesaver-for-crafting/issues) на нашем GitLab репозитории или сообщите на [mods.factorio.com](https://mods.factorio.com/mod/timesaver-for-crafting/discussion).
 
 ## <a name="feature"></a> Хотите новую функцию?
-Вы можете *запросить* новую функцию [submitting an issue](https://gitlab.com/ZwerOxotnik/event-listener/issues) на нашем GitLab репозитории или сообщите на [mods.factorio.com](https://mods.factorio.com/mod/event-listener/discussion).
+Вы можете *запросить* новую функцию [submitting an issue](https://gitlab.com/ZwerOxotnik/timesaver-for-crafting/issues) на нашем GitLab репозитории или сообщите на [mods.factorio.com](https://mods.factorio.com/mod/timesaver-for-crafting/discussion).
 
 ## Предпосылки
 
