@@ -11,23 +11,17 @@ Read this in another language | [English](/README.md) | [Русский](/docs/r
 ## Contents
 
 * [Overview](#overview)
-* [Dependencies](#dependencies)
-    * [Embedded](#embedded)
 * [Issues](#issue)
 * [Features](#feature)
 * [Future plans](#Future-plans)
 * [Installing](#installing)
+* [Dependencies](#dependencies)
+    * [Embedded](#embedded)
 * [License](#license)
 
 ## Overview
 
 Lost crafting time is compensated. Your craft speeds up depending on your craft activity.
-
-## Dependencies
-
-### Embedded
-
-* Event listener: [mods.factorio.com](https://mods.factorio.com/mod/event-listener), [GitLab](https://gitlab.com/ZwerOxotnik/event-listener)
 
 ## <a name="issue"></a> Found an Issue?
 
@@ -58,6 +52,12 @@ If you have downloaded the source archive (GitLab):
 
 * copy the mod directory into your factorio mods directory
 * rename the mod directory to timesaver-for-crafting_*versionnumber*, where *versionnumber* is the version of the mod that you've downloaded (e.g., 2.0.0)
+
+## Dependencies
+
+### Embedded
+
+* Event listener: [mods.factorio.com](https://mods.factorio.com/mod/event-listener), [GitLab](https://gitlab.com/ZwerOxotnik/event-listener)
 
 ## License
 

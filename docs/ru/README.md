@@ -11,23 +11,17 @@
 ## Содержание
 
 * [Введение](#overview)
-* [Зависимости](#dependencies)
-    * [Встроенные](#embedded)
 * [Сообщить об ошибки](#issue)
 * [Запросить функцию](#feature)
 * [Будущие планы](#future-plans)
 * [Установка](#installing)
+* [Зависимости](#dependencies)
+    * [Встроенные](#embedded)
 * [Лицензия](#license)
 
 ## <a name="overview"></a> Введение
 
 Потерянное время крафта компенсируется. Ваш крафт ускоряется в зависимости от вашего активности крафта
-
-## <a name="Optional"></a> Зависимости
-
-### <a name="embedded"></a> Встроенные
-
-* Event listener: [mods.factorio.com](https://mods.factorio.com/mod/event-listener), [GitLab](https://gitlab.com/ZwerOxotnik/event-listener)
 
 ## <a name="issue"></a> Нашли ошибку?
 
@@ -57,6 +51,12 @@
 
 * скопируйте данный мод в директорию модов Factorio
 * переименуйте данный мод в timesaver-for-crafting_*версия*, где *версия* это версия мода, которую вы скачали (например, 2.0.0)
+
+## <a name="dependencies"></a> Зависимости
+
+### <a name="embedded"></a> Встроенные
+
+* Event listener: [mods.factorio.com](https://mods.factorio.com/mod/event-listener), [GitLab](https://gitlab.com/ZwerOxotnik/event-listener)
 
 ## Лицензия
 
