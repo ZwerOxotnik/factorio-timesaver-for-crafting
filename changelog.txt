@@ -1,0 +1,15 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2019-01-19
+  Features:
+    - Added localization
+    - Added setting for state of mod
+  Bugfixes:
+    - Fixed error when craft an item in cheat mode (https://mods.factorio.com/mod/timesaver-for-crafting/discussion/5c42cd347f3064000b047d3d)
+  Changes:
+    - Updated embedded module «Event listener» to 0.1.1
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2019-01-02
+  Notes:
+    - First release for 0.16

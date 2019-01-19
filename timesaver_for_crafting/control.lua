@@ -1,13 +1,13 @@
 -- Timesaver for crafting
 -- Copyright (c) 2019 ZwerOxotnik <zweroxotnik@gmail.com>
 -- License: MIT
--- Version: 0.1.0 (2019.01.02)
+-- Version: 0.3.0 (2019.01.19)
 -- Description: Lost crafting time is compensated.
 -- Your craft speeds up depending on your craft activity.
 -- Source: https://gitlab.com/ZwerOxotnik/timesaver-for-crafting
 -- Homepage: https://mods.factorio.com/mod/timesaver-for-crafting
 
-local BUILD = 1000 -- Always to increment the number when change the code
+local BUILD = 1300 -- Always to increment the number when change the code
 local MAX_ACCUMULATED = 60 * 60
 local SPEED_BONUS = 8
 local config = require('timesaver_for_crafting/config')
@@ -28,7 +28,7 @@ end
 local function on_player_crafted_item(event)
   -- Validation of data
   local player = game.players[event.player_index]
-  if not (player and player.valid) then return end
+  if not (player and player.valid) or player.cheat_mode then return end
 
   local player_data = global.timesaver_for_crafting.players[event.player_index]
 
@@ -113,6 +113,27 @@ local function on_load()
   end
 end
 
+local function on_runtime_mod_setting_changed(event)
+  if event.setting ~= "tfc_state" then return end
+
+  if settings.global[event.setting].value then
+    mod.events.on_player_cancelled_crafting = on_player_cancelled_crafting
+    mod.events.on_pre_player_crafted_item = on_pre_player_crafted_item
+    mod.events.on_player_crafted_item = on_player_crafted_item
+    game.print({"", {"loading-mods"}, " ", {"mod-name.timesaver-for-crafting"}, " ✓"})
+  else
+    mod.events.on_player_cancelled_crafting = function() end
+    mod.events.on_pre_player_crafted_item = function() end
+    mod.events.on_player_crafted_item = function() end
+    for _, player in pairs( game.players ) do
+      if player.character then
+        player.character_crafting_speed_modifier = 0
+      end
+    end
+    game.print({"", {"gui-mod-load-error.to-be-disabled"}, {"mod-name.timesaver-for-crafting"}})
+  end
+end
+
 mod.events = {
   on_load = on_load,
   on_init = on_init,
@@ -120,7 +141,8 @@ mod.events = {
   on_player_cancelled_crafting = on_player_cancelled_crafting,
   on_player_crafted_item = on_player_crafted_item,
   on_player_joined_game = on_player_joined_game,
-  on_player_removed = on_player_removed
+  on_player_removed = on_player_removed,
+  on_runtime_mod_setting_changed = on_runtime_mod_setting_changed
 }
 
 return mod

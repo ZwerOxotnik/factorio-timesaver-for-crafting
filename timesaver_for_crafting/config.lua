@@ -8,7 +8,7 @@ config.update_player = function(player)
   local player_data = mod.players[player_index]
   player_data.accumulated = player_data.accumulated or 0
   player_data.last_craft_tick = player_data.last_craft_tick or player.online_time
-  if player.character then
+  if player.character and not player.cheat_mode then
     player_data.crafting_state = player_data.crafting_state or (player.crafting_queue ~= nil)
   else
     player_data.crafting_state = false

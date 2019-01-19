@@ -1,7 +1,7 @@
 -- Event listener
 -- Copyright (c) 2019 ZwerOxotnik <zweroxotnik@gmail.com>
 -- License: MIT
--- Version: 0.1.0 (2019.01.02)
+-- Version: 0.1.1 (2019.01.05)
 -- Description: The script combine events of other scripts.
 -- Designed for mod developers.
 -- Source: https://gitlab.com/ZwerOxotnik/event-listener
@@ -11,9 +11,10 @@ local mod = {}
 
 local function create_container(list, name_event)
   local container = {}
-  for _name_mod, _ in pairs( list ) do
-    if type(list[_name_mod]) == 'table' and type(list[_name_mod].events) == 'table' and list[_name_mod].events[name_event] then
-      table.insert(container, list[_name_mod].events[name_event])
+  for name_mod, _ in pairs( list ) do
+    if type(list[name_mod]) == 'table' and type(list[name_mod].events) == 'table' and list[name_mod].events[name_event] then
+      log("Event '" .. name_event .. "' handled for '" .. name_mod .. "'")
+      table.insert(container, list[name_mod].events[name_event])
     end
   end
   return container
@@ -34,7 +35,7 @@ local function handle_events(list)
               end
             end)
           else
-            log("event '" .. name_event .. "' can't be handle")
+            log("Event '" .. name_event .. "' can't be handle for '" .. name_mod .. "'")
           end
         end
       end
@@ -57,6 +58,8 @@ local function handle_events(list)
               end)
             end
           end
+        else
+          log("Event '" .. name_event .. "' can't be handle for '" .. name_mod .. "'")
         end
       end
     else
