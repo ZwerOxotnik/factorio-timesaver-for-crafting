@@ -15,5 +15,5 @@
 
 - первый выпуск для 0.16
 
-[v0.3.0]: https://mods.factorio.com/mod/timesaver-for-crafting/downloads
+[v0.3.0]: https://mods.factorio.com/download/timesaver-for-crafting/5c431a4daeb706000d09a77d
 [v0.1.0]: https://mods.factorio.com/download/timesaver-for-crafting/5c2cdd91f64c7c000b0d2e84
