@@ -1,7 +1,7 @@
 -- Event listener
 -- Copyright (c) 2019 ZwerOxotnik <zweroxotnik@gmail.com>
 -- License: MIT
--- Version: 0.1.1 (2019.01.05)
+-- Version: 0.1.2 (2019.01.27)
 -- Description: The script combine events of other scripts.
 -- Designed for mod developers.
 -- Source: https://gitlab.com/ZwerOxotnik/event-listener
@@ -25,12 +25,13 @@ local function handle_events(list)
   for name_mod, _ in pairs( list ) do
     if type(list[name_mod]) == 'table' and type(list[name_mod].events) == 'table' then
       for name_event, _ in pairs( list[name_mod].events ) do
-        local target_event = defines.events[name_event]
-        if target_event and not is_used[name_event] then
+        local target_event_id = defines.events[name_event]
+        if target_event_id and not is_used[name_event] then
           is_used[name_event] = true
-          if script.get_event_handler(target_event) == nil then
-            script.on_event(target_event, function(event)
-              for _, _event in pairs( create_container(list, name_event) ) do
+          if script.get_event_handler(target_event_id) == nil then
+            local container = create_container(list, name_event)
+            script.on_event(target_event_id, function(event)
+              for _, _event in pairs( container ) do
                 _event(event)
               end
             end)
@@ -51,8 +52,9 @@ local function handle_events(list)
           for name, _ in pairs( list[name_mod].events ) do
             if not is_used[name_event] and name == name_event then
               is_used[name_event] = true
+              local container = create_container(list, name_event)
               add_func(function()
-                for _, _event in pairs( create_container(list, name_event) ) do
+                for _, _event in pairs( container ) do
                   _event()
                 end
               end)
@@ -70,10 +72,18 @@ end
 
 -- Handle all possible events from list for the game
 mod.add_events = function(list)
+  log('Event listener 0.1.2 adding events')
+
   if type(list) == 'table' then
     handle_events(list)
   else
     log('Type of list is not table!')
+  end
+
+  if game then
+    log('Event listener 0.1.2 finished adding of events during the game')
+  else
+    log('Event listener 0.1.2 finished adding of events before during the game')
   end
 end
 
