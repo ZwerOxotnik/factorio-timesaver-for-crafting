@@ -14,7 +14,7 @@ source+=".git"
 echo url=$source
 
 ### If source is not found, set constant
-[ -z "${gamever}" ] && gamever="0.16" && echo "warning! branch=$gamever"
+[ -z "${gamever}" ] && gamever="0.17" && echo "warning! branch=$gamever"
 
 ### Pause function until enter key is pressed
 function pause(){
