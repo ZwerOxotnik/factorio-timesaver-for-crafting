@@ -3,7 +3,7 @@ Timesaver for crafting
 Copyright (c) 2019 ZwerOxotnik <zweroxotnik@gmail.com>
 License: The MIT License (MIT)
 Author: ZwerOxotnik
-Version: 0.4.0 (2019.01.28)
+Version: 0.5.0 (2019.01.28)
 Description: Lost crafting time is compensated.
              Your craft speeds up depending on your craft activity.
 Source: https://gitlab.com/ZwerOxotnik/timesaver-for-crafting
@@ -11,12 +11,12 @@ Mod portal: https://mods.factorio.com/mod/timesaver-for-crafting
 Homepage: https://forums.factorio.com/viewtopic.php?f=190&t=64620
 ]]--
 
-local BUILD = 1500 -- Always to increment the number when change the code
+local BUILD = 1600 -- Always to increment the number when change the code
 local MAX_ACCUMULATED = 60 * 50
 local SPEED_BONUS = 7
 local config = require('timesaver_for_crafting/config')
 local module = {}
-module.version = "0.4.0"
+module.version = "0.5.0"
 -- TODO: change checking and to add mod interface
 
 local function calc_new_crafting_speed(accumulated)
