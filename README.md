@@ -61,7 +61,7 @@ If you have downloaded the source archive (GitLab):
 
 ## License
 
-See [/LICENSE](/LICENSE) file and [/3rd-party.txt](/3rd-Party.txt) file for full license text.
+See [/LICENSE](/LICENSE) file and [/3rd-Party.txt](/3rd-Party.txt) file for full license text.
 
 [homepage]: http://mods.factorio.com/mod/timesaver-for-crafting
 [Factorio]: https://factorio.com/
