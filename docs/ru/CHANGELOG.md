@@ -1,5 +1,17 @@
 # Список изменений
 
+## 2019-01-28
+
+### [v0.5.0][v0.5.0]
+
+* Обновлён для Factorio 0.17
+
+### [v0.4.0][v0.4.0]
+
+* Ребаланс
+* Обнолвён встроенный модуль «Event listener» до 0.3.0
+* Перезагрузить экономитель времени для данных игрока во время события "on_player_respawned"
+
 ## 2019-01-27
 
 ### [v0.3.1][v0.3.1]
@@ -19,8 +31,10 @@
 
 ### [v0.1.0][v0.1.0]
 
-- первый выпуск для 0.16
+* Первый выпуск для 0.16
 
+[v0.5.0]: https://mods.factorio.com/mod/timesaver-for-crafting/downloads
+[v0.4.0]: https://mods.factorio.com/mod/timesaver-for-crafting/downloads
 [v0.3.1]: https://mods.factorio.com/download/timesaver-for-crafting/5c4d7d639daafb000debf734
 [v0.3.0]: https://mods.factorio.com/download/timesaver-for-crafting/5c431a4daeb706000d09a77d
 [v0.1.0]: https://mods.factorio.com/download/timesaver-for-crafting/5c2cdd91f64c7c000b0d2e84

@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.0
+Date: 2019-02-08
+  Notes:
+    - Updated for Factorio 0.17
+---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 2019-02-08
+  Changes:
+    - Rebalance
+    - Updated embedded module «Event listener» to 0.3.0
+    - Reset timesaver of player data during event "on_player_respawned"
+---------------------------------------------------------------------------------------------------
 Version: 0.3.1
 Date: 2019-01-02
   Changes:
@@ -17,4 +29,4 @@ Date: 2019-01-19
 Version: 0.1.0
 Date: 2019-01-02
   Notes:
-    - First release for 0.16
+    - First release for Factorio 0.16

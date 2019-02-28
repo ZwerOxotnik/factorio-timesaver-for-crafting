@@ -5,6 +5,6 @@ data:extend({
     setting_type = "runtime-global",
     default_value = true,
     localised_name = {"gui-mod-info.toggle"},
-    localised_description  = ""
+    localised_description = ""
   }
 })
