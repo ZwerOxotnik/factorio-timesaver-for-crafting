@@ -13,10 +13,12 @@ We optimize for readability:
 * Each branch is divided into versions of the game Factorio x.x (e.g., 0.16)
 
 ## Found an Issue?
+
 Please report any issues or a mistake in the documentation, you can help us by
 [submitting an issue](https://gitlab.com/ZwerOxotnik/timesaver-for-crafting/issues) to our GitLab Repository or on [mods.factorio.com](https://mods.factorio.com/mod/timesaver-for-crafting/discussion).
 
 ## Want a Feature?
+
 You can *request* a new feature by [submitting an issue](https://gitlab.com/ZwerOxotnik/timesaver-for-crafting/issues) to our GitLab
 Repository or on [mods.factorio.com](https://mods.factorio.com/mod/timesaver-for-crafting/discussion).
 

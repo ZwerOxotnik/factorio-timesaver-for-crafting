@@ -1,22 +1,24 @@
 --[[
-Timesaver for crafting
 Copyright (c) 2019 ZwerOxotnik <zweroxotnik@gmail.com>
-License: The MIT License (MIT)
+Licensed under the MIT licence;
 Author: ZwerOxotnik
-Version: 0.5.0 (2019.01.28)
+Version: 0.5.1 (2019.03.04)
 Description: Lost crafting time is compensated.
              Your craft speeds up depending on your craft activity.
+
+You can write and receive any information on the links below.
 Source: https://gitlab.com/ZwerOxotnik/timesaver-for-crafting
 Mod portal: https://mods.factorio.com/mod/timesaver-for-crafting
 Homepage: https://forums.factorio.com/viewtopic.php?f=190&t=64620
+
 ]]--
 
-local BUILD = 1600 -- Always to increment the number when change the code
+local BUILD = 1700 -- Always to increment the number when change the code
 local MAX_ACCUMULATED = 60 * 50
 local SPEED_BONUS = 7
 local config = require('timesaver_for_crafting/config')
 local module = {}
-module.version = "0.5.0"
+module.version = "0.5.1"
 -- TODO: change checking and to add mod interface
 
 local function calc_new_crafting_speed(accumulated)
@@ -149,7 +151,7 @@ local function on_runtime_mod_setting_changed(event)
     local events = {"on_player_cancelled_crafting", "on_pre_player_crafted_item", "on_player_crafted_item", "on_player_respawned"}
     for _, event_name in pairs( events ) do
       event_listener.update_event(event_name)
-      module.events[event_name] = nil
+      module.events[event_name] = function() end
     end
 
     for _, player in pairs( game.players ) do
@@ -177,6 +179,11 @@ if settings.global["tfc_state"].value then
   module.events.on_pre_player_crafted_item = on_pre_player_crafted_item
   module.events.on_player_crafted_item = on_player_crafted_item
   module.events.on_player_respawned = on_player_respawned
+else
+  module.events.on_player_cancelled_crafting = function() end
+  module.events.on_pre_player_crafted_item = function() end
+  module.events.on_player_crafted_item = function() end
+  module.events.on_player_respawned = function() end
 end
 
 return module

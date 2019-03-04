@@ -1,5 +1,12 @@
 # Список изменений
 
+## 2019-03-04
+
+### [v0.5.1][v0.5.1]
+
+* Изменено: другие зависимости
+* Исправлено: десихронизация
+
 ## 2019-01-28
 
 ### [v0.5.0][v0.5.0]
@@ -33,6 +40,7 @@
 
 * Первый выпуск для 0.16
 
+[v0.5.1]: https://mods.factorio.com/mod/timesaver-for-crafting/downloads
 [v0.5.0]: https://mods.factorio.com/download/timesaver-for-crafting/5c781150fc4f4e000dd73ad0
 [v0.4.0]: https://mods.factorio.com/download/timesaver-for-crafting/5c780c67dab877000d27f7bd
 [v0.3.1]: https://mods.factorio.com/download/timesaver-for-crafting/5c4d7d639daafb000debf734

@@ -1,3 +1,6 @@
+-- Copyright (c) 2019 ZwerOxotnik <zweroxotnik@gmail.com>
+-- Licensed under the MIT licence;
+
 local config = {}
 
 config.update_player = function(player)

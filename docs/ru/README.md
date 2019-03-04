@@ -16,7 +16,7 @@
 * [Будущие планы](#future-plans)
 * [Установка](#installing)
 * [Зависимости](#dependencies)
-    * [Встроенные](#embedded)
+    * [Необходимые](#required)
 * [Лицензия](#license)
 
 ## <a name="overview"></a> Введение
@@ -54,13 +54,15 @@
 
 ## <a name="dependencies"></a> Зависимости
 
-### <a name="embedded"></a> Встроенные
+### <a name="required"></a> Необходимые
 
-* Event listener: [mods.factorio.com](https://mods.factorio.com/mod/event-listener), [GitLab](https://gitlab.com/ZwerOxotnik/event-listener)
+* [Event listener](https://mods.factorio.com/mod/event-listener)
 
 ## <a name="license"></a> Лицензия
 
-Смотрите [/LICENSE](/LICENSE) файл и [/3rd-Party.txt](/3rd-Party.txt) файл для полного просмотра лицензии.
+Этот проект защищен авторским правом © 2019 ZwerOxotnik \<zweroxotnik@gmail.com\>.
+
+Использование исходного кода, включенного здесь, регламентируется лицензией MIT (The MIT License). Смотрите [LICENCE](/LICENCE) файл для разбора.
 
 [homepage]: http://mods.factorio.com/mod/timesaver-for-crafting
 [Factorio]: https://factorio.com/

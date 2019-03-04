@@ -16,7 +16,7 @@ Read this in another language | [English](/README.md) | [Русский](/docs/r
 * [Future plans](#Future-plans)
 * [Installing](#installing)
 * [Dependencies](#dependencies)
-    * [Embedded](#embedded)
+    * [Required](#required)
 * [License](#license)
 
 ## Overview
@@ -55,13 +55,15 @@ If you have downloaded the source archive (GitLab):
 
 ## Dependencies
 
-### Embedded
+### Required
 
-* Event listener: [mods.factorio.com](https://mods.factorio.com/mod/event-listener), [GitLab](https://gitlab.com/ZwerOxotnik/event-listener)
+* [Event listener](https://mods.factorio.com/mod/event-listener)
 
 ## License
 
-See [/LICENSE](/LICENSE) file and [/3rd-Party.txt](/3rd-Party.txt) file for full license text.
+This project is copyright © 2019 ZwerOxotnik \<zweroxotnik@gmail.com\>.
+
+Use of the source code included here is governed by the MIT licence. See the [LICENCE](/LICENCE) file for details.
 
 [homepage]: http://mods.factorio.com/mod/timesaver-for-crafting
 [Factorio]: https://factorio.com/

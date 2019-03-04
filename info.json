@@ -1,12 +1,14 @@
 {
     "name": "timesaver-for-crafting",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "factorio_version": "0.17",
-    "title": "Timesaver for crafting",
+    "title": "Timesaver for crafting [item=speed-module-3]",
     "author": "ZwerOxotnik",
     "contact": "zweroxotnik@gmail.com",
     "source": "https://gitlab.com/ZwerOxotnik/timesaver-for-crafting",
     "homepage": "https://forums.factorio.com/viewtopic.php?f=190&t=64620",
     "description": "Lost crafting time is compensated. Your craft speeds up depending on your craft activity.",
-    "dependencies": []
+    "dependencies": [
+        "event-listener >= 0.4.0"
+    ]
 }

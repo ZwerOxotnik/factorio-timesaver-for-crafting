@@ -1,4 +1,4 @@
-event_listener = require('event_listener/control')
+event_listener = require("__event-listener__/branch-1/stable-version")
 local modules = {}
 modules.timesaver_for_crafting = require('timesaver_for_crafting/control')
 
