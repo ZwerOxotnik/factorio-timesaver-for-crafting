@@ -2,7 +2,7 @@
 Copyright (c) 2019 ZwerOxotnik <zweroxotnik@gmail.com>
 Licensed under the MIT licence;
 Author: ZwerOxotnik
-Version: 0.5.2 (2019.06.22)
+Version: 0.5.3 (2019.06.23)
 
 You can write and receive any information on the links below.
 Source: https://gitlab.com/ZwerOxotnik/timesaver-for-crafting
@@ -11,13 +11,13 @@ Homepage: https://forums.factorio.com/viewtopic.php?f=190&t=64620
 
 ]]--
 
-local BUILD = 1800 -- Always to increment the number when change the code
+local BUILD = 1900 -- Always to increment the number when change the code
 local MAX_ACCUMULATED = 60 * 50 -- TODO: create settings for this
 local SPEED_BONUS = 7 -- TODO: create settings for this
 local config = require('timesaver_for_crafting/config')
 local module = {}
 module.events = {}
-module.version = "0.5.2"
+module.version = "0.5.3"
 -- TODO: change checking and to add mod interface
 
 
