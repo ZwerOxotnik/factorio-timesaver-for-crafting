@@ -6,7 +6,7 @@
     "author": "ZwerOxotnik",
     "contact": "zweroxotnik@gmail.com, Discord: ZwerOxotnik#7117",
     "source": "https://gitlab.com/ZwerOxotnik/timesaver-for-crafting",
-    "homepage": "https://forums.factorio.com/viewtopic.php?f=190&t=64620",
+    "homepage": "https://www.reddit.com/r/ZwerOxotnik/",
     "description": "Lost crafting time is compensated. Your craft speeds up depending on your craft activity.",
     "dependencies": [
         "event-listener >= 0.8.0"
