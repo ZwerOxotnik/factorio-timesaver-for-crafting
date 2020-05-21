@@ -1,8 +1,6 @@
 --[[
-Copyright (c) 2019 ZwerOxotnik <zweroxotnik@gmail.com>
+Copyright (c) 2019-2020 ZwerOxotnik <zweroxotnik@gmail.com>
 Licensed under the MIT licence;
-Author: ZwerOxotnik
-Version: 0.5.3 (2019.06.23)
 
 You can write and receive any information on the links below.
 Source: https://gitlab.com/ZwerOxotnik/timesaver-for-crafting
@@ -17,7 +15,6 @@ local SPEED_BONUS = 7 -- TODO: create settings for this
 local config = require('timesaver_for_crafting/config')
 local module = {}
 module.events = {}
-module.version = "0.5.3"
 -- TODO: change checking and to add mod interface
 
 
@@ -47,7 +44,9 @@ end
 
 
 local function calc_new_crafting_speed(accumulated)
-	return SPEED_BONUS * (accumulated / MAX_ACCUMULATED)
+    local crafting_speed = SPEED_BONUS * (accumulated / MAX_ACCUMULATED)
+    if crafting_speed < 0 then crafting_speed = 1 end
+	return crafting_speed
 end
 
 local function check_completed_craft(player)
