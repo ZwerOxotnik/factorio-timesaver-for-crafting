@@ -3,11 +3,6 @@
 Read this in another language | [English](/README.md) | [Русский](/docs/ru/README.md)
 |---|---|---|
 
-## Quick Links
-
-[Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md)
-|---|---|
-
 ## Contents
 
 * [Overview](#overview)
@@ -15,8 +10,6 @@ Read this in another language | [English](/README.md) | [Русский](/docs/r
 * [Features](#feature)
 * [Future plans](#Future-plans)
 * [Installing](#installing)
-* [Dependencies](#dependencies)
-    * [Required](#required)
 * [License](#license)
 
 ## Overview
@@ -51,17 +44,11 @@ For more information, see [Installing Mods on the Factorio wiki](https://wiki.fa
 If you have downloaded the source archive (GitLab):
 
 * copy the mod directory into your factorio mods directory
-* rename the mod directory to timesaver-for-crafting_*versionnumber*, where *versionnumber* is the version of the mod that you've downloaded (e.g., 2.0.0)
-
-## Dependencies
-
-### Required
-
-* [Event listener](https://mods.factorio.com/mod/event-listener)
+* rename the mod directory to timesaver-for-crafting_*versionnumber*, where *versionnumber* is the version of the mod that you've downloaded (e.g., 0.6.1)
 
 ## License
 
-This project is copyright © 2019 ZwerOxotnik \<zweroxotnik@gmail.com\>.
+This project is copyright © 2019-2020 ZwerOxotnik \<zweroxotnik@gmail.com\>.
 
 Use of the source code included here is governed by the MIT licence. See the [LICENCE](/LICENCE) file for details.
 

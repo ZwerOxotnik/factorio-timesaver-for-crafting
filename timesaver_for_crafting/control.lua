@@ -9,39 +9,13 @@ Homepage: https://forums.factorio.com/viewtopic.php?f=190&t=64620
 
 ]]--
 
-local BUILD = 1900 -- Always to increment the number when change the code
-local MAX_ACCUMULATED = 60 * 50 -- TODO: create settings for this
-local SPEED_BONUS = 7 -- TODO: create settings for this
+local BUILD = 2000 -- Always to increment the number when change the code
+local MAX_ACCUMULATED = 60 * 60 * 2 -- TODO: create settings for this
+local SPEED_BONUS = 6 -- TODO: create settings for this
 local config = require('timesaver_for_crafting/config')
 local module = {}
 module.events = {}
 -- TODO: change checking and to add mod interface
-
-
-local function get_event(event)
-	if type(event) == "number" then
-		return event
-	else
-		return defines.events[event] --or event
-	end
-end
-
--- This function for compatibility with "Event listener" module and into other modules
-local function put_event(event, func)
-	event = get_event(event)
-	if event then
-		module.events[event] = func
-		if Event then
-			Event.register(event, func)
-		end
-		return true
-	else
-		log("The event is nil")
-		-- error("The event is nil")
-	end
-	return false
-end
-
 
 local function calc_new_crafting_speed(accumulated)
     local crafting_speed = SPEED_BONUS * (accumulated / MAX_ACCUMULATED)
@@ -53,8 +27,6 @@ local function check_completed_craft(player)
 	local player_data = global.timesaver_for_crafting.players[player.index]
 	player.character_crafting_speed_modifier = calc_new_crafting_speed(player_data.accumulated)
 	player_data.last_craft_tick = player.online_time
-
-	-- player.print(player.character_crafting_speed_modifier)
 end
 
 local function on_player_crafted_item(event)
@@ -150,26 +122,18 @@ module.on_init = function(event)
 	global.timesaver_for_crafting.build = BUILD
 end
 
-module.on_load = function()
-	if not game then
-		if global.timesaver_for_crafting == nil then
-			config.init()
-		end
-	end
-end
-
 local function on_runtime_mod_setting_changed(event)
 	if event.setting ~= "tfc_state" then return end
 
 	if settings.global[event.setting].value then
-		put_event("on_player_cancelled_crafting", on_player_cancelled_crafting)
-		event_listener.update_event("on_player_cancelled_crafting")
-		put_event("on_pre_player_crafted_item", on_pre_player_crafted_item)
-		event_listener.update_event("on_pre_player_crafted_item")
-		put_event("on_player_crafted_item", on_player_crafted_item)
-		event_listener.update_event("on_player_crafted_item")
-		put_event("on_player_respawned", on_player_respawned)
-		event_listener.update_event("on_player_respawned")
+		module.events[defines.events.on_player_cancelled_crafting] = on_player_cancelled_crafting
+		event_listener.update_event(moduele, defines.events.on_player_cancelled_crafting)
+		module.events[defines.events.on_pre_player_crafted_item] = on_pre_player_crafted_item
+		event_listener.update_event(moduele, defines.events.on_pre_player_crafted_item)
+		module.events[defines.events.on_player_crafted_item] = on_player_crafted_item
+		event_listener.update_event(moduele, defines.events.on_player_crafted_item)
+		module.events[defines.events.on_player_respawned] = on_player_respawned
+		event_listener.update_event(moduele, defines.events.on_player_respawned)
 
 		game.print({"", {"loading-mods"}, " ", {"mod-name.timesaver-for-crafting"}, " - ✓"})
 	else
@@ -192,19 +156,19 @@ local function on_runtime_mod_setting_changed(event)
 	end
 end
 
-put_event("on_player_joined_game", on_player_joined_game)
-put_event("on_player_removed", on_player_removed)
-put_event("on_runtime_mod_setting_changed", on_runtime_mod_setting_changed)
+module.events[defines.events.on_player_joined_game] = on_player_joined_game
+module.events[defines.events.on_player_removed] = on_player_removed
+module.events[defines.events.on_runtime_mod_setting_changed] = on_runtime_mod_setting_changed
 if script.mod_name == 'level' or settings.global["tfc_state"].value then
-	put_event("on_player_cancelled_crafting", on_player_cancelled_crafting)
-	put_event("on_pre_player_crafted_item", on_pre_player_crafted_item)
-	put_event("on_player_crafted_item", on_player_crafted_item)
-	put_event("on_player_respawned", on_player_respawned)
+	module.events[defines.events.on_player_cancelled_crafting] = on_player_cancelled_crafting
+	module.events[defines.events.on_pre_player_crafted_item] = on_pre_player_crafted_item
+	module.events[defines.events.on_player_crafted_item] = on_player_crafted_item
+	module.events[defines.events.on_player_respawned] = on_player_respawned
 else
-	put_event("on_player_cancelled_crafting", function() end)
-	put_event("on_pre_player_crafted_item", function() end)
-	put_event("on_player_crafted_item", function() end)
-	put_event("on_player_respawned", function() end)
+	module.events[defines.events.on_player_cancelled_crafting] = function() end
+	module.events[defines.events.on_pre_player_crafted_item] = function() end
+	module.events[defines.events.on_player_crafted_item] = function() end
+	module.events[defines.events.on_player_respawned] = function() end
 end
 
 return module
