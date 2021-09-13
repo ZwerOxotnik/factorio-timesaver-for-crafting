@@ -1,56 +1,112 @@
-# Timesaver for crafting
+**[Contributing](#contributing)** |
+**[License](#license)**
 
-Read this in another language | [English](/README.md) | [Русский](/docs/ru/README.md)
-|---|---|---|
+---
 
-## Contents
+<!-- <p align="center">
+  <img
+    width="144"
+    src="thumbnail.png"
+    alt="thumbnail"
+  />
+</p> -->
 
-* [Overview](#overview)
-* [Issues](#issue)
-* [Features](#feature)
-* [Future plans](#Future-plans)
-* [Installing](#installing)
-* [License](#license)
+<p align="center">
+  <a href="https://github.com/ZwerOxotnik/factorio-timesaver-for-crafting/tags">
+    <img src="https://img.shields.io/github/tag/ZwerOxotnik/factorio-timesaver-for-crafting.svg?label=Release&color=FF5500" alt="Release">
+  </a>
+  <a href="https://github.com/ZwerOxotnik/factorio-timesaver-for-crafting/stargazers">
+    <img src="https://img.shields.io/github/stars/ZwerOxotnik/factorio-timesaver-for-crafting.svg?label=Stars&color=F08125" alt="Star">
+  </a>
+  <a href="https://discord.gg/YyJVUCa">
+    <img src="https://discordapp.com/api/guilds/480103519769067542/widget.png?style=shield" alt="Discord">
+  <br/>
+  <a href="https://www.patreon.com/ZwerOxotnik">
+    <img src="https://ionicabizau.github.io/badges/patreon.svg" alt="Patreon">
+  <a href="https://ko-fi.com/zweroxotnik">
+    <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg" height="20" alt="Buy me a coffee">
+  <a href="http://github.com/ZwerOxotnik/factorio-timesaver-for-crafting/fork">
+    <img src="https://img.shields.io/github/forks/ZwerOxotnik/factorio-timesaver-for-crafting.svg?label=Forks&color=7889DD" alt="Fork">
+  </a>
+</p>
 
-## Overview
+<p align="center">
+  <a href="changelog.txt">Changelog</a>
+  ·
+  <a href="https://crowdin.com/project/factorio-mods-localization">Translations</a>
+</p>
 
-Lost crafting time is compensated. Your craft speeds up depending on your craft activity.
+<h1></h1>
 
-## <a name="issue"></a> Found an Issue?
+<!-- Put your "fancy" image/video here -->
+<!-- <img
+  src=""
+  align="right"
+/> -->
 
-Please report any issues or a mistake in the documentation, you can help us by
-[submitting an issue](https://gitlab.com/ZwerOxotnik/timesaver-for-crafting/issues) to our GitLab Repository or on [mods.factorio.com](https://mods.factorio.com/mod/timesaver-for-crafting/discussion).
+Techs for science (extension for EasyAPI)
+-----------------------------------------
 
-## <a name="feature"></a> Want a Feature?
+Research for money.
 
-You can *request* a new feature by [submitting an issue](https://gitlab.com/ZwerOxotnik/timesaver-for-crafting/issues) to our GitLab
-Repository or on [mods.factorio.com](https://mods.factorio.com/mod/timesaver-for-crafting/discussion).
+<p align="center">
+  <a href="https://mods.factorio.com/mod/timesaver-for-crafting/downloads"><strong>Download the mod&nbsp;&nbsp;▶</strong></a>
+</p>
 
-## Future plans
+‼️ Important Links (Translations, Discord Support)
+---------------------------------------------------------------
 
-* Add teams compatibility
-* Add remote interface
-* Add scenario compatibility
-* Add customization
+| Installation Guide | Translations | Discord |
+| ------------------ | ------------ | ------- |
+| 📖 [Installation Guide](https://wiki.factorio.com/index.php?title=Installing_Mods) | 📚 [Help with translations](https://crowdin.com/project/factorio-mods-localization) | 🦜 [Discord][discord] |
 
-## Installing
+If you want to download from this source, then use commands below (requires [git][git]).
 
-If you have downloaded a zip archive:
+```bash
+git clone --recurse-submodules -j8 https://github.com/ZwerOxotnik/factorio-timesaver-for-crafting
+cd timesaver-for-crafting
+```
 
-* simply place it in your mods directory.
+[Contributing](/CONTRIBUTING.md)
+--------------------------------
 
-For more information, see [Installing Mods on the Factorio wiki](https://wiki.factorio.com/index.php?title=Installing_Mods).
+Don't be afraid to contribute! We have many, many things you can do to help out. If you're trying to contribute but stuck, tag @ZwerOxotnik
 
-If you have downloaded the source archive (GitLab):
+Alternatively, join the [Discord group][Discord] and send a message there.
 
-* copy the mod directory into your factorio mods directory
-* rename the mod directory to timesaver-for-crafting_*versionnumber*, where *versionnumber* is the version of the mod that you've downloaded (e.g., 0.6.1)
+~~Please read the [contributing file](/CONTRIBUTING.md) for other details on how to contribute.~~
 
-## License
+License
+-------
 
-This project is copyright © 2019-2020 ZwerOxotnik \<zweroxotnik@gmail.com\>.
+Copyright (c) 2019-2021 ZwerOxotnik <zweroxotnik@gmail.com>
 
-Use of the source code included here is governed by the MIT licence. See the [LICENCE](/LICENCE) file for details.
+Licensed under the MIT licence.
 
-[homepage]: http://mods.factorio.com/mod/timesaver-for-crafting
-[Factorio]: https://factorio.com/
+```
+The MIT License (MIT)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+[jq]: https://stedolan.github.io/jq/download/
+[7z]: https://www.7-zip.org/download.html
+[discord]: https://discord.gg/YyJVUCa
+[GitHub-page]: https://zweroxotnik.github.io/timesaver-for-crafting/
+[git]: https://git-scm.com/downloads
