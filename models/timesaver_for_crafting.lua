@@ -7,16 +7,16 @@ local players_data
 --#endregion
 
 
---#region Constants
-local MAX_ACCUMULATED = 60 * 60 * 2 -- TODO: create a setting for this
-local SPEED_BONUS = 6 -- TODO: create a setting for this
+--#region Settings
+local max_compensated_ticks = settings.global["TfC_max_compensated_ticks"].value
+local speed_bonus = settings.global["TfC_max_speed_bonus"].value
 --#endregion
 
 
 --#region Utils
 
----@param player PlayerIdentification
----@param player_index number index of player
+---@param player LuaPlayer
+---@param player_index number index of the player
 local function check_player_data(player, player_index)
 	players_data[player_index] = players_data[player_index] or {}
 
@@ -33,8 +33,8 @@ end
 ---@param accumulated number
 ---@return number >= 1
 local function calc_new_crafting_speed(accumulated)
-	local crafting_speed = SPEED_BONUS * (accumulated / MAX_ACCUMULATED)
-	if crafting_speed < 0 then crafting_speed = 1 end
+	local crafting_speed = speed_bonus * (accumulated / max_compensated_ticks)
+	if crafting_speed < 0 then return 1 end
 	return crafting_speed
 end
 
@@ -64,7 +64,7 @@ local function on_player_crafted_item(event)
 	end
 
 	if player_data.accumulated > 0 then
-		player_data.accumulated = player_data.accumulated - (event.recipe.energy * SPEED_BONUS)
+		player_data.accumulated = player_data.accumulated - (event.recipe.energy * speed_bonus)
 	end
 
 	-- another variant of work
@@ -99,8 +99,8 @@ local function on_pre_player_crafted_item(event)
 	if not player_data.crafting_state then
 		player_data.crafting_state = true
 		player_data.accumulated = player_data.accumulated + (player.online_time - player_data.last_craft_tick)
-		if player_data.accumulated > MAX_ACCUMULATED then
-			player_data.accumulated = MAX_ACCUMULATED
+		if player_data.accumulated > max_compensated_ticks then
+			player_data.accumulated = max_compensated_ticks
 		end
 	end
 	player.character_crafting_speed_modifier = calc_new_crafting_speed(player_data.accumulated)
@@ -111,24 +111,40 @@ local function on_player_removed(event)
 end
 
 local function on_player_joined_game(event)
-	-- Validation of data
 	local player_index = event.player_index
 	local player = game.get_player(player_index)
-
 	if not players_data[player_index] then
 		check_player_data(player, player_index)
 	end
 end
 
+local function on_player_left_game(event)
+	local player_index = event.player_index
+	game.get_player(player_index).character_crafting_speed_modifier = 1
+	players_data[player_index] = nil
+end
+
 local function on_player_respawned(event)
 	local player_index = event.player_index
-	local player = game.get_player(player_index)
-
 	local player_data = players_data[player_index]
 	player_data.accumulated = 0
 	player_data.crafting_state = false
+	local player = game.get_player(player_index)
 	player_data.last_craft_tick = player.online_time
 	player.character_crafting_speed_modifier = calc_new_crafting_speed(player_data.accumulated)
+end
+
+local mod_settings = {
+	TfC_max_speed_bonus = function(value)
+		speed_bonus = value
+	end,
+	TfC_max_compensated_ticks = function(value)
+		max_compensated_ticks = value
+	end
+}
+local function on_runtime_mod_setting_changed(event)
+	local f = mod_settings[event.setting]
+	if f then f(settings.global[event.setting].value) end
 end
 
 --#endregion
@@ -167,10 +183,15 @@ M.on_mod_disabled = function()
 	end
 end
 
+
 M.events = {
+	[defines.events.on_runtime_mod_setting_changed] = on_runtime_mod_setting_changed,
 	[defines.events.on_player_removed] = on_player_removed,
 	[defines.events.on_player_joined_game] = function(event)
 		pcall(on_player_joined_game, event)
+	end,
+	[defines.events.on_player_left_game] = function(event)
+		pcall(on_player_left_game, event)
 	end,
 	[defines.events.on_player_cancelled_crafting] = function(event)
 		pcall(on_player_cancelled_crafting, event)
@@ -187,6 +208,8 @@ M.events = {
 }
 
 M.events_when_off = {
+	[defines.events.on_runtime_mod_setting_changed] = on_runtime_mod_setting_changed,
+	[defines.events.on_player_left_game] = on_player_removed,
 	[defines.events.on_player_removed] = on_player_removed,
 	[defines.events.on_player_joined_game] = function(event)
 		pcall(on_player_joined_game, event)
