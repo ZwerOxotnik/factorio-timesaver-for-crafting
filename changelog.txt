@@ -12,7 +12,7 @@ Date: 2021-12-16
 Version: 0.8.1
 Date: 2021-12-16
   Bugfixes:
-    - Fixed default bonus of crafting (1 -> 0)
+    - Fixed default speed bonus of crafting (1 -> 0)
     - Fixed calculation of recipes using 60 ticks as a default time for 1 second.
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.0
