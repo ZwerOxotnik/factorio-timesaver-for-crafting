@@ -31,10 +31,10 @@ local function check_player_data(player, player_index)
 end
 
 ---@param accumulated number
----@return number >= 1
+---@return number >=0
 local function calc_new_crafting_speed(accumulated)
 	local crafting_speed = speed_bonus * (accumulated / max_compensated_ticks)
-	if crafting_speed < 0 then return 1 end
+	if crafting_speed < 0 then return 0 end
 	return crafting_speed
 end
 
@@ -64,15 +64,15 @@ local function on_player_crafted_item(event)
 	end
 
 	if player_data.accumulated > 0 then
-		player_data.accumulated = player_data.accumulated - (event.recipe.energy * speed_bonus)
+		player_data.accumulated = player_data.accumulated - (event.recipe.energy * 60 * speed_bonus)
 	end
 
 	-- another variant of work
 	--[[
 	if player_data.accumulated > 0 then
-		player_data.accumulated = player_data.accumulated - (event.recipe.energy * (1 + calc_new_crafting_speed(player_data.accumulated)))
+		player_data.accumulated = player_data.accumulated - (event.recipe.energy * 60 * (1 + calc_new_crafting_speed(player_data.accumulated)))
 	else
-		player_data.accumulated = player_data.accumulated - event.recipe.energy
+		player_data.accumulated = player_data.accumulated - event.recipe.energy * 60
 	end
 	]]--
 
