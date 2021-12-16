@@ -13,5 +13,12 @@ data:extend({
 		maximum_value = 60 * 60 * 60,
 		default_value = 60 * 60 * 2,
 		minimum_value = 1
+	}, {
+		type = "int-setting",
+		name = "TfC_minimum_speed_bonus",
+		setting_type = "runtime-global",
+		default_value = 0,
+		minimum_value = -10,
+		maximum_value = 10
 	}
 })

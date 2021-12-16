@@ -9,6 +9,7 @@ local players_data
 
 --#region Settings
 local max_compensated_ticks = settings.global["TfC_max_compensated_ticks"].value
+local min_speed_bonus = settings.global["TfC_minimum_speed_bonus"].value
 local speed_bonus = settings.global["TfC_max_speed_bonus"].value
 --#endregion
 
@@ -31,10 +32,10 @@ local function check_player_data(player, player_index)
 end
 
 ---@param accumulated number
----@return number >=0
+---@return number >= min_speed_bonus
 local function calc_new_crafting_speed(accumulated)
 	local crafting_speed = speed_bonus * (accumulated / max_compensated_ticks)
-	if crafting_speed < 0 then return 0 end
+	if crafting_speed < min_speed_bonus then return min_speed_bonus end
 	return crafting_speed
 end
 
@@ -135,6 +136,9 @@ local function on_player_respawned(event)
 end
 
 local mod_settings = {
+	TfC_minimum_speed_bonus = function(value)
+		min_speed_bonus = value
+	end,
 	TfC_max_speed_bonus = function(value)
 		speed_bonus = value
 	end,
