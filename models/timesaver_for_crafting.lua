@@ -65,15 +65,15 @@ local function on_player_crafted_item(event)
 	end
 
 	if player_data.accumulated > 0 then
-		player_data.accumulated = player_data.accumulated - (event.recipe.energy * 60 * speed_bonus)
+		player_data.accumulated = player_data.accumulated - (event.recipe.energy * (60 * game.speed) * speed_bonus)
 	end
 
 	-- another variant of work
 	--[[
 	if player_data.accumulated > 0 then
-		player_data.accumulated = player_data.accumulated - (event.recipe.energy * 60 * (1 + calc_new_crafting_speed(player_data.accumulated)))
+		player_data.accumulated = player_data.accumulated - (event.recipe.energy * (60 * game.speed) * (1 + calc_new_crafting_speed(player_data.accumulated)))
 	else
-		player_data.accumulated = player_data.accumulated - event.recipe.energy * 60
+		player_data.accumulated = player_data.accumulated - event.recipe.energy * (60 * game.speed)
 	end
 	]]--
 
