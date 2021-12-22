@@ -1,8 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.4
+Date: 2021-12-22
+  Changes:
+    - Changed event handler (slightly better performance)
+---------------------------------------------------------------------------------------------------
 Version: 0.8.3
 Date: 2021-12-16
   Changes:
-    - Calculation recipe time depends on game speed now
+    - Calculation of recipe time depends on game speed now
+---------------------------------------------------------------------------------------------------
+Version: 0.8.3
+Date: 2021-12-16
+  Changes:
+    - Calculation of recipe time depends on game speed now
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.2
 Date: 2021-12-16
