@@ -65,7 +65,7 @@ Research for money.
 If you want to download from this source, then use commands below (requires [git][git]).
 
 ```bash
-git clone --recurse-submodules -j8 https://github.com/ZwerOxotnik/factorio-timesaver-for-crafting
+git clone --recurse-submodules -j8 https://github.com/ZwerOxotnik/factorio-timesaver-for-crafting timesaver-for-crafting
 cd timesaver-for-crafting
 ```
 
