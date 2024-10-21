@@ -1,7 +1,7 @@
 local M = {}
 
 
---#region Global data
+--#region storage data
 local mod_data
 local players_data
 --#endregion
@@ -154,13 +154,13 @@ end
 --#endregion
 
 local function link_data()
-	mod_data = global.timesaver_for_crafting
+	mod_data = storage.timesaver_for_crafting
 	players_data = mod_data.players
 end
 
 local function on_init()
-	global.timesaver_for_crafting = global.timesaver_for_crafting or {}
-	mod_data = global.timesaver_for_crafting
+	storage.timesaver_for_crafting = storage.timesaver_for_crafting or {}
+	mod_data = storage.timesaver_for_crafting
 	mod_data.players = mod_data.players or {}
 
 	link_data()
