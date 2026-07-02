@@ -1,10 +1,10 @@
 {
     "name": "timesaver-for-crafting",
-    "version": "0.9.0",
-    "factorio_version": "2.0",
+    "version": "1.0.0",
+    "factorio_version": "2.1",
     "title": "Timesaver for crafting",
     "author": "ZwerOxotnik",
-    "contact": "zweroxotnik@gmail.com, Discord: ZwerOxotnik#7117",
+    "contact": "zweroxotnik@gmail.com, Discord: ZwerOxotnik",
     "homepage": "https://www.reddit.com/r/ZwerOxotnik/",
     "description": "See locale/*",
     "dependencies": [
